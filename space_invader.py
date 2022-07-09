@@ -23,6 +23,12 @@ pyxel.load("test.pyxres")
 #1 fois tous les 10 mechants un special arrive, ou un super pouvoir (cercle)
 #mort quand nombre negatif depuis coordonnees gentil
 
+pyxel.sound(3).speed = 12
+pyxel.sound(4).speed = 12
+pyxel.sound(5).speed = 12
+pyxel.sound(6).speed = 12
+pyxel.play(0, [3, 4, 5, 6], loop=True)
+
 def update():
 
     global x, y, l_mechant, collision, mechants_morts, radius, finale_gentil, co_finales_mechant, frequence_mechants
@@ -107,9 +113,9 @@ def draw():
     if pyxel.frame_count % 15 == 0:
         background += 1
     if background % 2 == 0:
-        pyxel.bltm(0, 0, 0, 8, 0, 16, 16)
+        pyxel.bltm(0, 0, 0, 64, 0, 128, 128)
     else:
-        pyxel.bltm(0, 0, 0, 24, 0, 16, 16)
+        pyxel.bltm(0, 0, 0, 192, 0, 128, 128)
 
     # si gentil pas entré en collision avec méchant et nb méchants morts pas négatif (c les 2 conditions de vie de gentil)
     if collision == 0 and mechants_morts >= 0:
