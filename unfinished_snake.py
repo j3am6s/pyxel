@@ -59,7 +59,7 @@ def draw():
     global tete
 
     #background
-    pyxel.bltm(0, 0, 0, 16, 16, 16, 16)
+    pyxel.bltm(0, 0, 0, 128, 128, 128, 128)
 
     #snake base
     pyxel.blt(tete[0], tete[1], 0, tete[2][0], tete[2][1], 8, 8, False)
