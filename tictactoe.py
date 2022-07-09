@@ -114,7 +114,7 @@ def draw():
     global tour, cercles, croix
 
     #background
-    pyxel.bltm(0, 0, 0, 32, 32, 13, 13)
+    pyxel.bltm(0, 0, 0, 256, 256, 104, 104)
 
     #cercles présents
     for i in range(len(cercles)):
@@ -134,7 +134,7 @@ def draw():
 
     if tour >= 13:
         # changer background
-        pyxel.bltm(0, 0, 0, 48, 32, 13, 13)
+        pyxel.bltm(0, 0, 0, 384, 256, 104, 104)
         # égalité
         if tour == 13:
             pyxel.blt(40, 48, 0, 16, 24, 8, 8, False)
