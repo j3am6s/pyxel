@@ -4,7 +4,7 @@ pyxel.load("test.pyxres")
 
 mario = [8, -20, [88, 48]]
 menu = 0
-fond = [32, 64]
+fond = [256, 512]
 xfond = 0
 monter = 0
 piece = []
@@ -103,25 +103,25 @@ def update():
                 piece[0] = -10
             piece[2] -= 1
 
-        if fond == [16, 80] and xfond == -145 and mechant[0] == 0:
+        if fond == [128, 640] and xfond == -145 and mechant[0] == 0:
             mechant.append([140, 104])
             mechant[0] = 1
-        if fond == [16, 96] and xfond == -75 and mechant[0] == 0:
+        if fond == [128, 768] and xfond == -75 and mechant[0] == 0:
             mechant.append([140, 104])
             mechant[0] = 1
-        if fond == [16, 96] and xfond == -150 and mechant[0] == 1:
+        if fond == [128, 768] and xfond == -150 and mechant[0] == 1:
             mechant.append([140, 104])
             mechant[0] = 2
-        if fond == [16, 112] and xfond == -140 and mechant[0] == 0:
+        if fond == [128, 896] and xfond == -140 and mechant[0] == 0:
             mechant.append([140, 104])
             mechant[0] = 1
-        if fond == [16, 112] and xfond == -230 and mechant[0] == 1:
+        if fond == [128, 896] and xfond == -230 and mechant[0] == 1:
             mechant.append([140, 104])
             mechant[0] = 2
-        if fond == [16, 128] and xfond == -88 and mechant[0] == 0:
+        if fond == [128, 1024] and xfond == -88 and mechant[0] == 0:
             mechant.append([140, 104])
             mechant[0] = 1
-        if fond == [16, 128] and xfond == -180 and mechant[0] == 1:
+        if fond == [128, 1024] and xfond == -180 and mechant[0] == 1:
             mechant.append([140, 104])
             mechant[0] = 2
         if mechant[0] != 0:
@@ -150,7 +150,7 @@ def update():
         moment += 1
         if moment - instant > 30 and moment - instant < 90:
             if xfond > -382:
-                xfond -= 1
+                xfond -= 8
             if pyxel.pget(mario[0], mario[1]+16) != 3:
                 mario[0] += 0.5
                 mario[1] += 2
@@ -160,11 +160,11 @@ def update():
             mario[2] = [108, 48]
         if moment - instant == 100:
             menu = 0
-            if unlocked == 1 and fond == [16, 80]:
+            if unlocked == 1 and fond == [128, 640]:
                 unlocked = 2
-            elif unlocked == 2 and fond == [16, 96]:
+            elif unlocked == 2 and fond == [128, 768]:
                 unlocked = 3
-            elif unlocked == 3 and fond == [16, 112]:
+            elif unlocked == 3 and fond == [128, 896]:
                 unlocked = 4
 
     if menu == 0:
@@ -174,33 +174,33 @@ def update():
         mario[2] = [88, 48]
         couleur = 0
         mechant = [0]
-        fond[0] = 32
-        fond[1] = 64
+        fond[0] = 256
+        fond[1] = 512
         contact = 0
         if pyxel.btnp(pyxel.KEY_1):
             menu = 1
             moment = 0
-            fond = [16, 80]
+            fond = [128, 640]
             couleur = 7
         if pyxel.btnp(pyxel.KEY_2) and unlocked >= 2:
             menu = 1
             moment = 0
-            fond = [16, 96]
+            fond = [128, 768]
             couleur = 7
         if pyxel.btnp(pyxel.KEY_3) and unlocked >= 3:
             menu = 1
             moment = 0
-            fond = [16, 112]
+            fond = [128, 896]
             couleur = 0
         if pyxel.btnp(pyxel.KEY_4) and unlocked >= 4:
             menu = 1
             moment = 0
-            fond = [16, 128]
+            fond = [128, 1024]
             couleur = 7
 
 def draw():
 
-    pyxel.bltm(xfond, 0, 0, fond[0], fond[1], 64, 16)
+    pyxel.bltm(xfond, 0, 0, fond[0], fond[1], 512, 128)
 
     pyxel.blt(mario[0], mario[1], 0, mario[2][0], mario[2][1], 12, 16, False)
 
