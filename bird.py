@@ -89,7 +89,7 @@ def draw():
     global x, y, u, tour, pieces
 
     #background
-    pyxel.bltm(0, 0, 0, 16, 64, 16, 16)
+    pyxel.bltm(0, 0, 0, 128, 128, 128, 128)
 
     #pieces
     if pyxel.frame_count % 15 != 0:
